@@ -1,0 +1,11 @@
+--- hdparm-9.16/geom.c	2009-03-21 14:13:29.000000000 +0100
++++ hdparm-9.16_new/geom.c	2010-05-10 16:11:50.000000000 +0200
+@@ -89,7 +89,7 @@
+ 		 * On all (32 and 64 bit) systems, the cyls value is bit-limited.
+ 		 * So try and correct it using other info we have at hand.
+ 		 */
+-		if (nsectors && cyls && heads && sects) {
++		if (*nsectors && *cyls && *heads && *sects) {
+ 			__u64 chs, hs = *heads * *sects;
+ 			chs = ((__u64)*cyls) * hs;
+ 			if (chs < *nsectors)
